@@ -39,7 +39,19 @@ const notices: Notice[] = [
     title: "장비 조정 관계로 리그오브레전드 시작이 지연되고 있습니다. 21시 40분에 시작합니다.",
     content: "Link: https://www.youtube.com/watch?v=4BVrzDfgcVQ",
     timestamp: new Date('2024-09-20T21:26:00'),
-  }
+  },
+  {
+    id: 6,
+    title: "해킹 경기 종료",
+    content: "4:6으로 KAIST 승",
+    timestamp: new Date('2024-09-21T00:00:00'),
+  },
+  {
+    id: 7,
+    title: "리그오브레전드 경기 종료",
+    content: "1:2로 POSTECH 승",
+    timestamp: new Date('2024-09-21T00:10:00'),
+  },
   // 여기에 더 많은 공지사항을 추가할 수 있습니다.
 ];
 
