@@ -33,8 +33,8 @@ const ScoreBoard: React.FC<ScoreBoardProps> = ({ scores }) => {
     color: '#ffffff', // 밝은 글씨
   };
 
-  const postechLightColor = '#fde6ee'; // 연한 POSTECH 색상
-  const kaistLightColor = '#e6eef7'; // 연한 KAIST 색상
+  const postechLightColor = '#ffc6ce'; // 연한 POSTECH 색상
+  const kaistLightColor = '#c6c6ff'; // 연한 KAIST 색상
 
   const ongoingColor = '#fff9c4'; // 진행 중인 경기의 배경색 (연한 노란색)
   const finishedColor = '#f5f5f5'; // 끝난 경기의 배경색 (연한 회색)
@@ -75,7 +75,8 @@ const ScoreBoard: React.FC<ScoreBoardProps> = ({ scores }) => {
                 style={{ 
                   ...cellStyle, 
                   color: postechColor,
-                  fontWeight: score.status === 'finished' && score.postech > score.kaist ? 'bold' : 'normal'
+                  fontWeight: score.status === 'finished' && score.postech > score.kaist ? 'bold' : 'normal',
+                  backgroundColor: score.status === 'finished' && score.postech > score.kaist ? postechLightColor : 'inherit'
                 }}
               >
                 {score.postech}
@@ -85,7 +86,8 @@ const ScoreBoard: React.FC<ScoreBoardProps> = ({ scores }) => {
                 style={{ 
                   ...cellStyle, 
                   color: kaistColor,
-                  fontWeight: score.status === 'finished' && score.kaist > score.postech ? 'bold' : 'normal'
+                  fontWeight: score.status === 'finished' && score.kaist > score.postech ? 'bold' : 'normal',
+                  backgroundColor: score.status === 'finished' && score.kaist > score.postech ? kaistLightColor : 'inherit'
                 }}
               >
                 {score.kaist}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Typography } from '@mui/material';
-import EmergencyNotice from '../components/EmergencyNotice';
+import Notice from '../components/Notice';
 
 interface Notice {
   id: number;
@@ -16,20 +16,26 @@ const notices: Notice[] = [
     content: "재밌고 안전한 포카전 되시기를 기원합니다.",
     timestamp: new Date('2024-09-20T00:00:00'),
   },
+  {
+    id: 2,
+    title: "리그오브레전드 라이브 시작했습니다.",
+    content: "Link: https://www.youtube.com/watch?v=4BVrzDfgcVQ",
+    timestamp: new Date('2024-09-20T21:08:00'),
+  }
   // 여기에 더 많은 공지사항을 추가할 수 있습니다.
 ];
 
-const EmergencyNoticePage: React.FC = () => {
+const NoticePage: React.FC = () => {
   // 타임스탬프를 기준으로 내림차순 정렬
   const sortedNotices = [...notices].sort((a, b) => b.timestamp.getTime() - a.timestamp.getTime());
 
   return (
     <Container>
       <Typography variant="h2" gutterBottom>
-        긴급 공지사항
+        전달 사항
       </Typography>
       {sortedNotices.map((notice) => (
-        <EmergencyNotice
+        <Notice
           key={notice.id}
           title={notice.title}
           content={notice.content}
@@ -40,4 +46,4 @@ const EmergencyNoticePage: React.FC = () => {
   );
 };
 
-export default EmergencyNoticePage;
+export default NoticePage;

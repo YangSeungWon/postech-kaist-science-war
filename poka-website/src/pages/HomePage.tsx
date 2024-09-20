@@ -13,6 +13,7 @@ const StyledLink = styled(RouterLink)(({ theme }) => ({
   textDecoration: 'none',
   color: theme.palette.common.white,
   backgroundColor: theme.palette.primary.main,
+  cursor: 'pointer', // Add this line
   '&:hover': {
     backgroundColor: theme.palette.primary.dark,
   },
@@ -36,8 +37,8 @@ const HomePage: React.FC = () => {
           </StyledLink>
         </Grid>
         <Grid item>
-          <StyledLink to="/notices" style={{ backgroundColor: theme.palette.secondary.main }}>
-            긴급 공지사항
+          <StyledLink to="/notices">
+            전달 사항
           </StyledLink>
         </Grid>
         <Grid item>
