@@ -32,7 +32,13 @@ const notices: Notice[] = [
     id: 4,
     title: "리그오브레전드 시작은 21시 20분",
     content: "Link: https://www.youtube.com/watch?v=4BVrzDfgcVQ",
-    timestamp: new Date('2024-09-20T21:12:00'),
+    timestamp: new Date('2024-09-20T21:13:00'),
+  },
+  {
+    id: 5,
+    title: "장비 조정 관계로 리그오브레전드 시작이 지연되고 있습니다. 21시 40분에 시작합니다.",
+    content: "Link: https://www.youtube.com/watch?v=4BVrzDfgcVQ",
+    timestamp: new Date('2024-09-20T21:26:00'),
   }
   // 여기에 더 많은 공지사항을 추가할 수 있습니다.
 ];

@@ -8,6 +8,8 @@ export interface Score {
   kaist: number;
   videoUrl?: string;
   status: 'finished' | 'ongoing' | 'upcoming';
+  location: string;
+  time: string;
 }
 
 interface ScoreBoardProps {
@@ -44,9 +46,10 @@ const ScoreBoard: React.FC<ScoreBoardProps> = ({ scores }) => {
       <Table>
         <TableHead>
           <TableRow>
-            <TableCell align="right" style={headerStyle} width="30%">종목</TableCell>
-            <TableCell align="center" style={{ ...headerStyle, backgroundColor: postechColor }} width="35%">POSTECH</TableCell>
-            <TableCell align="center" style={{ ...headerStyle, backgroundColor: kaistColor }} width="35%">KAIST</TableCell>
+            <TableCell align="right" style={headerStyle} width="20%">종목</TableCell>
+            <TableCell align="center" style={headerStyle} width="20%">장소 및 시간</TableCell>
+            <TableCell align="center" style={{ ...headerStyle, backgroundColor: postechColor }} width="30%">POSTECH</TableCell>
+            <TableCell align="center" style={{ ...headerStyle, backgroundColor: kaistColor }} width="30%">KAIST</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -70,13 +73,17 @@ const ScoreBoard: React.FC<ScoreBoardProps> = ({ scores }) => {
                 {score.status === 'ongoing' && ' (진행 중)'}
                 {score.status === 'finished' && ' (종료)'}
               </TableCell>
+              <TableCell align="center" style={cellStyle}>
+                {score.location}<br />{score.time}
+              </TableCell>
               <TableCell 
                 align="center" 
                 style={{ 
                   ...cellStyle, 
                   color: postechColor,
                   fontWeight: score.status === 'finished' && score.postech > score.kaist ? 'bold' : 'normal',
-                  backgroundColor: score.status === 'finished' && score.postech > score.kaist ? postechLightColor : 'inherit'
+                  backgroundColor: score.status === 'finished' && score.postech > score.kaist ? postechLightColor : 'inherit',
+                  fontSize: '1.5rem' 
                 }}
               >
                 {score.postech}
@@ -87,7 +94,8 @@ const ScoreBoard: React.FC<ScoreBoardProps> = ({ scores }) => {
                   ...cellStyle, 
                   color: kaistColor,
                   fontWeight: score.status === 'finished' && score.kaist > score.postech ? 'bold' : 'normal',
-                  backgroundColor: score.status === 'finished' && score.kaist > score.postech ? kaistLightColor : 'inherit'
+                  backgroundColor: score.status === 'finished' && score.kaist > score.postech ? kaistLightColor : 'inherit',
+                  fontSize: '1.5rem' 
                 }}
               >
                 {score.kaist}

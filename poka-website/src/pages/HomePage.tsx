@@ -24,6 +24,7 @@ const HomePage: React.FC = () => {
 
   return (
     <Container maxWidth="sm">
+      <img src={require('../assets/logo512.png')} alt="logo" style={{ width: '20%', height: 'auto', marginLeft: 'auto', marginRight: 'auto', display: 'block' }}/>
       <Typography variant="h2" gutterBottom align="center">
         포스텍 카이스트<br/>학생 대제전
       </Typography>
