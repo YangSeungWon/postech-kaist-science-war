@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Typography, Button } from '@mui/material';
+import { Container, Typography, Button, Box } from '@mui/material';
 import ScoreBoard, { Score } from '../components/ScoreBoard';
 
 const ScoresPage: React.FC = () => {
   const [scores, setScores] = useState<Score[]>([]);
+  const [lastUpdated, setLastUpdated] = useState<Date | null>(null);
 
   const fetchScores = async () => {
     // URL에 타임스탬프를 추가하여 매번 새로운 요청으로 인식되게 합니다
@@ -17,6 +18,7 @@ const ScoresPage: React.FC = () => {
     });
     const data = await response.json();
     setScores(data);
+    setLastUpdated(new Date());
   };
 
   useEffect(() => {
@@ -34,6 +36,13 @@ const ScoresPage: React.FC = () => {
         새로고침
       </Button>
       <ScoreBoard scores={scores} />
+      {lastUpdated && (
+        <Box mt={2}>
+          <Typography variant="caption" color="textSecondary">
+            마지막 업데이트: {lastUpdated.toLocaleString()}
+          </Typography>
+        </Box>
+      )}
     </Container>
   );
 };
