@@ -13,6 +13,9 @@ const theme = createTheme({
       main: '#C80150', // POSTECH Red
     },
   },
+  typography: {
+    fontFamily: '"Noto Sans KR", sans-serif',
+  },
   components: {
     MuiLink: {
       styleOverrides: {
