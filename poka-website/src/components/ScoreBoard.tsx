@@ -64,14 +64,14 @@ const ScoreBoard: React.FC<ScoreBoardProps> = ({ scores }) => {
               }}
             >
               <TableCell component="th" scope="row" style={{...cellStyle, whiteSpace: 'nowrap'}} align="right">
-                {score.videoUrl && (
-                  <Link href={score.videoUrl} target="_blank" rel="noopener noreferrer" style={{ marginRight: '8px' }}>
-                    <YouTubeIcon style={{ color: 'red', fontSize: '1.5rem' }} />
-                  </Link>
-                )}
-                <b>{score.category}</b>
+                <b>{score.category}</b><br/>
                 {score.status === 'ongoing' && ' (진행 중)'}
                 {score.status === 'finished' && ' (종료)'}
+                {score.videoUrl && (
+                  <Link href={score.videoUrl} target="_blank" rel="noopener noreferrer" style={{ marginRight: '8px' }}>
+                    <YouTubeIcon style={{ color: 'red', fontSize: '1.5rem', alignItems: 'center'}} />
+                  </Link>
+                )}
               </TableCell>
               <TableCell align="center" style={cellStyle}>
                 {score.location}<br />{score.time}
