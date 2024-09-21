@@ -5,5 +5,5 @@
     { "category": "리그오브레전드", "postech": 1, "kaist": 2, "location": "e스포츠 콜로세움", "time": "Sep 20, 20:30~23:00", "videoUrl": "https://www.youtube.com/watch?v=4BVrzDfgcVQ", "status": "finished" },
     { "category": "야구", "postech": 0, "kaist": 14, "location": "대운동장", "time": "Sep 21, 10:00~12:30", "status": "finished" },
     { "category": "과학퀴즈", "postech": 170, "kaist": 275, "location": "대강당", "time": "Sep 21, 14:00~15:30", "videoUrl": "https://www.youtube.com/watch?v=dGiy5xQdVWA", "status": "finished" },
-    { "category": "농구", "postech": 0, "kaist": 0, "location": "체육관", "time": "Sep 21, 16:00~18:00", "videoUrl": "https://www.youtube.com/watch?v=2A0rN3bH0kc", "status": "ongoing" }
+    { "category": "농구", "postech": 14, "kaist": 22, "location": "체육관", "time": "Sep 21, 16:00~18:00", "videoUrl": "https://www.youtube.com/watch?v=2A0rN3bH0kc", "status": "ongoing" }
 ]
